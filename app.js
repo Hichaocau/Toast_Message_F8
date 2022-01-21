@@ -16,6 +16,7 @@ function showSuccessToast() {
       duration: 5000
     });
   }
+  
 function toast({ title = "", message = "", type = "info", duration = 3000 }) {
     const main = document.getElementById("toast");
     if (main) {
@@ -42,9 +43,11 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
       };
       const icon = icons[type];
       const delay = (duration / 1000).toFixed(2);
+      // duration: tgian tồn tại
   
       toast.classList.add("toast", `toast--${type}`);
       toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+                                            /* forward: dừng ở điểm cuối của animation */
   
       toast.innerHTML = `
                       <div class="toast__icon">
